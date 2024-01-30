@@ -4,6 +4,7 @@ import {createStore,applyMiddleware} from'redux'
 import axios from 'axios'
 import reducer from './Reducer'
 import { fetchUserData,showError } from './Action'
+import "../App.css"
 
 const store = createStore(reducer,applyMiddleware(thunk))
 
@@ -32,7 +33,7 @@ function DisplayData() {
     },[])
 
   return (
-    <div>
+    <div className='data'>
       <button onClick={handleClick}>{showData? "Hide Data":"Fetch Data"}</button>
         {showData && (
             <div>
